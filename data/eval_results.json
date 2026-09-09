@@ -1,0 +1,319 @@
+{
+  "majority_baseline": {
+    "intent_classification": {
+      "per_intent": {
+        "account_access": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "support": 25
+        },
+        "billing_subscription": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "support": 25
+        },
+        "cancellation_refund": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "support": 25
+        },
+        "device_compatibility": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "support": 25
+        },
+        "general_support": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "support": 25
+        },
+        "missing_content": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "support": 25
+        },
+        "playback_issue": {
+          "precision": 0.125,
+          "recall": 1.0,
+          "f1": 0.222,
+          "support": 25
+        },
+        "recommendation_feedback": {
+          "precision": 0,
+          "recall": 0.0,
+          "f1": 0,
+          "support": 25
+        }
+      },
+      "macro_f1": 0.028,
+      "weighted_f1": 0.028,
+      "accuracy": 0.125
+    },
+    "escalation": {
+      "accuracy": 0.545,
+      "precision": 0.545,
+      "recall": 1.0,
+      "f1": 0.706,
+      "confusion": {
+        "tp": 109,
+        "tn": 0,
+        "fp": 91,
+        "fn": 0
+      }
+    },
+    "reply_quality": {
+      "mean_composite": 0.562,
+      "dimension_means": {
+        "relevance": 0.122,
+        "tone": 1.0,
+        "groundedness": 0.3,
+        "actionability": 1.0,
+        "safety": 1.0
+      },
+      "rubric": {
+        "relevance": "Does the reply address the customer's actual problem?",
+        "tone": "Is the tone professional, empathetic, and brand-consistent?",
+        "groundedness": "Is the reply grounded in how the brand historically responds (not hallucinated)?",
+        "actionability": "Does the reply give a clear next step or ask a useful clarifying question?",
+        "safety": "Does the reply avoid making promises, sharing account info, or overstepping?"
+      },
+      "n": 200,
+      "judge_type": "deterministic-proxy-v1",
+      "note": "Deterministic heuristic proxy. For production, replace with LLM judge using the same rubric dimensions."
+    }
+  },
+  "tfidf_nn_baseline": {
+    "intent_classification": {
+      "per_intent": {
+        "account_access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 25
+        },
+        "billing_subscription": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 25
+        },
+        "cancellation_refund": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 25
+        },
+        "device_compatibility": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 25
+        },
+        "general_support": {
+          "precision": 1.0,
+          "recall": 0.88,
+          "f1": 0.936,
+          "support": 25
+        },
+        "missing_content": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 25
+        },
+        "playback_issue": {
+          "precision": 0.893,
+          "recall": 1.0,
+          "f1": 0.943,
+          "support": 25
+        },
+        "recommendation_feedback": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 25
+        }
+      },
+      "macro_f1": 0.985,
+      "weighted_f1": 0.985,
+      "accuracy": 0.985
+    },
+    "escalation": {
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "confusion": {
+        "tp": 109,
+        "tn": 91,
+        "fp": 0,
+        "fn": 0
+      }
+    },
+    "reply_quality": {
+      "mean_composite": 0.541,
+      "dimension_means": {
+        "relevance": 0.122,
+        "tone": 1.0,
+        "groundedness": 0.255,
+        "actionability": 1.0,
+        "safety": 0.909
+      },
+      "rubric": {
+        "relevance": "Does the reply address the customer's actual problem?",
+        "tone": "Is the tone professional, empathetic, and brand-consistent?",
+        "groundedness": "Is the reply grounded in how the brand historically responds (not hallucinated)?",
+        "actionability": "Does the reply give a clear next step or ask a useful clarifying question?",
+        "safety": "Does the reply avoid making promises, sharing account info, or overstepping?"
+      },
+      "n": 200,
+      "judge_type": "deterministic-proxy-v1",
+      "note": "Deterministic heuristic proxy. For production, replace with LLM judge using the same rubric dimensions."
+    }
+  },
+  "signal_desk_agent": {
+    "intent_classification": {
+      "per_intent": {
+        "account_access": {
+          "precision": 0.893,
+          "recall": 1.0,
+          "f1": 0.943,
+          "support": 25
+        },
+        "billing_subscription": {
+          "precision": 0.95,
+          "recall": 0.76,
+          "f1": 0.844,
+          "support": 25
+        },
+        "cancellation_refund": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 25
+        },
+        "device_compatibility": {
+          "precision": 0.941,
+          "recall": 0.64,
+          "f1": 0.762,
+          "support": 25
+        },
+        "general_support": {
+          "precision": 0.658,
+          "recall": 1.0,
+          "f1": 0.794,
+          "support": 25
+        },
+        "missing_content": {
+          "precision": 0.88,
+          "recall": 0.88,
+          "f1": 0.88,
+          "support": 25
+        },
+        "playback_issue": {
+          "precision": 0.84,
+          "recall": 0.84,
+          "f1": 0.84,
+          "support": 25
+        },
+        "recommendation_feedback": {
+          "precision": 1.0,
+          "recall": 0.88,
+          "f1": 0.936,
+          "support": 25
+        }
+      },
+      "macro_f1": 0.875,
+      "weighted_f1": 0.875,
+      "accuracy": 0.875
+    },
+    "escalation": {
+      "accuracy": 0.9,
+      "precision": 0.874,
+      "recall": 0.954,
+      "f1": 0.912,
+      "confusion": {
+        "tp": 104,
+        "tn": 76,
+        "fp": 15,
+        "fn": 5
+      }
+    },
+    "reply_quality": {
+      "mean_composite": 0.734,
+      "dimension_means": {
+        "relevance": 0.38,
+        "tone": 1.0,
+        "groundedness": 0.922,
+        "actionability": 0.65,
+        "safety": 0.919
+      },
+      "rubric": {
+        "relevance": "Does the reply address the customer's actual problem?",
+        "tone": "Is the tone professional, empathetic, and brand-consistent?",
+        "groundedness": "Is the reply grounded in how the brand historically responds (not hallucinated)?",
+        "actionability": "Does the reply give a clear next step or ask a useful clarifying question?",
+        "safety": "Does the reply avoid making promises, sharing account info, or overstepping?"
+      },
+      "n": 200,
+      "judge_type": "deterministic-proxy-v1",
+      "note": "Deterministic heuristic proxy. For production, replace with LLM judge using the same rubric dimensions."
+    }
+  },
+  "judge_human_agreement": {
+    "mean_score_escalated": 0.753,
+    "mean_score_autohandled": 0.711,
+    "score_gap": -0.042,
+    "n_escalated": 109,
+    "n_autohandled": 91,
+    "interpretation": "Auto-handled messages score higher on the quality rubric than escalated ones, which is expected: escalation replies are conservative DM redirects, not full resolutions. A positive gap indicates the judge's quality signal aligns with the human escalation decision."
+  },
+  "failure_analysis": {
+    "total_failures": 35,
+    "total_samples": 200,
+    "failure_rate": 0.175,
+    "top_5_modes": [
+      {
+        "mode": "under-classification: specific intent missed (predicted general_support)",
+        "count": 13,
+        "example": "@SpotifyCares It doesn\u2019t no, I don\u2019t think it\u2019s an issue with my computer. I\u2019ve seen online that other people\u2019s recently",
+        "example_true": "playback_issue/auto-handle",
+        "example_pred": "general_support/escalate"
+      },
+      {
+        "mode": "over-escalation: safe message escalated unnecessarily",
+        "count": 6,
+        "example": "@SpotifyCares Thank you kindly. I'm sure it makes for a better UX overall and is at least valid to test. Just a simple o",
+        "example_true": "playback_issue/auto-handle",
+        "example_pred": "playback_issue/escalate"
+      },
+      {
+        "mode": "under-escalation: risky message auto-handled",
+        "count": 4,
+        "example": "@SpotifyCares Randomly generated and assigned numbers is just ridiculous. I don\u2019t even want to use Amazon Music but you\u2019",
+        "example_true": "playback_issue/escalate",
+        "example_pred": "playback_issue/auto-handle"
+      },
+      {
+        "mode": "intent confusion: billing_subscription vs account_access",
+        "count": 2,
+        "example": "@SpotifyCares I just upgraded to family premium, and invited my wife. It still shows her account as free. Its been over ",
+        "example_true": "billing_subscription/escalate",
+        "example_pred": "account_access/escalate"
+      },
+      {
+        "mode": "intent confusion: recommendation_feedback vs missing_content",
+        "count": 2,
+        "example": "Hi @SpotifyCares my Discover Weekly playlist hasn't updated in 3 weeks \ud83d\ude2d",
+        "example_true": "recommendation_feedback/auto-handle",
+        "example_pred": "missing_content/auto-handle"
+      }
+    ]
+  }
+}

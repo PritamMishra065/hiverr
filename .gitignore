@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+data/archive_raw/
+data/banking77_raw/
+*.zip

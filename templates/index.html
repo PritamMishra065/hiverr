@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signal Desk | SpotifyCares support agent</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand-lockup"><span class="brand-mark">S</span><div><div class="eyebrow">SIGNAL DESK</div><strong>Support intelligence</strong></div></div>
+      <div class="top-meta"><span class="live-dot"></span> {% if llm_mode %}LLM-powered{% else %}Keyword mode{% endif %} <span class="divider"></span> <span class="muted">{{ brand }}</span></div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div><p class="eyebrow accent">AI SUPPORT AGENT / PROTOTYPE</p><h1>Turn noisy support history<br /><em>into a safer next reply.</em></h1><p class="lede">Classify an incoming message, retrieve how SpotifyCares handled similar issues, and make the human handoff decision explicit.</p></div>
+        <div class="hero-stats"><div><span>{{ '{:,}'.format(inbound_count) }}</span><small>customer messages</small></div><div><span>{{ '{:,}'.format(outbound_count) }}</span><small>brand replies</small></div><div><span>7</span><small>working intents</small></div></div>
+      </section>
+
+      <section class="workspace">
+        <div class="panel composer-panel">
+          <div class="panel-heading"><div><span class="step">01</span><h2>Incoming message</h2></div><span class="pill">LIVE PREVIEW</span></div>
+          <div class="composer"><textarea id="message" placeholder="Paste a customer message here…">Spotify Premium keeps skipping every few seconds on my Android phone. I already restarted the app.</textarea><div class="composer-footer"><span id="char-count">0 characters</span><button id="run" class="primary">Analyze message <span>→</span></button></div></div>
+          <div class="examples"><span class="label">TRY AN EXAMPLE</span><div id="example-list"></div></div>
+        </div>
+
+        <div class="panel result-panel" id="result-panel"><div class="empty-state"><div class="empty-icon">✦</div><h2>Your decision canvas</h2><p>Run an analysis to see intent, evidence, a grounded draft, and the reason behind the escalation policy.</p></div></div>
+      </section>
+
+      <section class="audit-section"><div class="section-heading"><div><p class="eyebrow accent">02 / EVALUATION SNAPSHOT</p><h2>Is the agent trustworthy yet?</h2></div><p class="section-note">A lightweight audit on a deterministic proxy sample. Human labels are the next step before production use.</p></div><div class="audit-grid" id="audit-grid"><div class="loading">Loading audit…</div></div></section>
+    </main>
+    <footer><span>Signal Desk · research prototype</span><span>Primary source: Customer Support on Twitter · brand slice: SpotifyCares</span></footer>
+  </div>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+Flask>=3.0
+scikit-learn>=1.4
+gunicorn>=22.0
+groq>=0.9.0
